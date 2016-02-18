@@ -12,7 +12,7 @@ pushd "$build_dir" &> /dev/null
 su nobody -c "curl https://aur.archlinux.org/cgit/aur.git/snapshot/$package.tar.gz | tar zx"
 
 pushd "$build_dir"/$package &> /dev/null
-su nobody -c "makepkg --noconfirm"
+su nobody -c "makepkg --noconfirm $2"
 pacman --upgrade --noconfirm *.xz
 
 popd &> /dev/null

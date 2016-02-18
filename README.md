@@ -14,6 +14,11 @@ is to switch between the `root` user and an unprivileged one like
 RUN aur-install.sh arduino
 ```
 
+You can also pass a second argument to not check for checksums:
+```
+RUN aur-install.sh arduino --skipchecksums
+```
+
 Unfortunately, this script does not install the package's dependencies
 so they need to be installed explicitly beforehand.
 
